@@ -27,7 +27,7 @@ return {
 
         mason_tool_installer.setup({
             ensure_installed = {"clang-format", "isort", -- python formatter
-            "black", "clangtidy", "pylint"-- python formatter
+            "black", "pylint", "cpplint", "codelldb"-- python formatter
             }
         })
     end

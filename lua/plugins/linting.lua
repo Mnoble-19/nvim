@@ -6,8 +6,8 @@ return {
   
       lint.linters_by_ft = {
         python = { "pylint" },
-        cpp = {"clangtidy"},
-        c = {"clangtidy"},
+        cpp = {"cpplint"},
+        c = {"cpplint"},
         
       }
   
