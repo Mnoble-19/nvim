@@ -10,7 +10,7 @@ opt.clipboard = 'unnamedplus'
 opt.breakindent = true
 opt.breakindent = true
 -- split windows
-opt.splitright = true -- split vertical window to the right
+-- opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 opt.signcolumn = 'yes'
 
@@ -19,8 +19,8 @@ opt.updatetime = 250
 opt.timeoutlen = 300
 opt.swapfile = false
 
-vim.opt.list = true
-vim.opt.listchars = {
+opt.list = true
+opt.listchars = {
     tab = '» ',
     trail = '·',
     nbsp = '␣'
@@ -30,10 +30,19 @@ vim.opt.listchars = {
 opt.inccommand = 'split'
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
+opt.hlsearch = true
+
+-- Enable line wrapping
+opt.wrap = true
+
+-- Wrap long lines at a character in 'breakat' rather than at the last character that fits on the screen
+opt.linebreak = true
+
+-- Show ↪ at the beginning of wrapped lines
+opt.showbreak = "↪ "

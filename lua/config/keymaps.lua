@@ -1,6 +1,5 @@
 -- set leader key to space
-vim.g.mapleader = " "
-vim.g.localmapleader = " "
+
 
 local keymap = vim.keymap -- for conciseness
 
@@ -11,10 +10,21 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("i", "jk", "<ESC>", {
     desc = "Exit insert mode with jk"
 })
-
+-- open terminal 
+keymap.set("n", "tt", ":split | terminal<CR>", {
+    desc = "Open a split terminal"
+})
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", {
     desc = "Clear search highlights"
+})
+
+-- Navigate wrapped lines as if they were multiple lines
+keymap.set("n", "j", "gj", {
+    desc = "Move down by visual lines"
+})
+keymap.set("n", "k", "gk", {
+    desc = "Move up by visual lines"
 })
 
 -- delete single character without copying into register
@@ -57,3 +67,10 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", {
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", {
     desc = "Open current buffer in new tab"
 }) --  move current buffer to new tab
+
+
+-- Keymaps for resizing splits
+keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Increase window height" })
+keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
+keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
+keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
